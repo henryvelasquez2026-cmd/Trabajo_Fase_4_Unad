@@ -1,3 +1,4 @@
+# ===========================================================================================================================
 # UNAD - PROGRAMACIÓN
 # FASE 4 Prácticas Simuladas
 
@@ -5,7 +6,7 @@
 # Grupo: [213023_645]
 # Programa: Ingeniería de Sistemas
 # Código Fuente:Fuente Colaborativa
-#  
+# ========================================================================================================================= 
 
 
 
@@ -15,19 +16,19 @@ from abc import ABC, abstractmethod
 # ==========================================
 # 1. EXCEPCIONES PERSONALIZADAS Y LOGS
 # ==========================================
-class SoftwareCKError(Exception):
+class SoftwareFJError(Exception):
     """Clase base para excepciones del sistema."""
     pass
 
-class ClienteInvalidoError(SoftwareCKError):
+class ClienteInvalidoError(SoftwareFJError):
     """Excepción para datos de cliente erróneos o incompletos."""
     pass
 
-class ServicioNoDisponibleError(SoftwareCKError):
+class ServicioNoDisponibleError(SoftwareFJError):
     """Excepción cuando un servicio no está disponible o es incorrecto."""
     pass
 
-class ReservaError(SoftwareCKError):
+class ReservaError(SoftwareFJError):
     """Excepción para fallas en la creación o procesamiento de reservas."""
     pass
 
@@ -36,7 +37,7 @@ def registrar_log(mensaje, tipo="INFO"):
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     log_linea = f"[{timestamp}] [{tipo}] {mensaje}\n"
     try:
-        with open("sistema_ck.log", "a", encoding="utf-8") as archivo:
+        with open("sistema_fj.log", "a", encoding="utf-8") as archivo:
             archivo.write(log_linea)
     except Exception as e:
         print(f"Error crítico al escribir en el log: {e}")
